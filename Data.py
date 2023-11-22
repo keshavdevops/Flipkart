@@ -12,6 +12,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:93.0) Gecko
 def scrape_data(url, group):
     product_webpage = requests.get(url, headers=headers)
     product_soup = BeautifulSoup(product_webpage.content, 'lxml')
+    print(product_soup)
 
     # title, price, MRP ..............................................
 
@@ -112,5 +113,5 @@ def flipkart_scrapy(url, group):
 
     return pl
 
-
-# flipkart_scrapy(url4, 'group1')
+url = "https://www.flipkart.com/12seasons-paper-yellow-pink-jewellery-set/p/itmfb43675d40747?pid=JWSG6E6NFSWVCZAB&lid=LSTJWSG6E6NFSWVCZABCKY03Z&marketplace=FLIPKART&store=mcr%2F96v%2Fyx2&spotlightTagId=BestsellerId_mcr%2F96v%2Fyx2&srno=b_1_1&otracker=product_breadCrumbs_12SEASONS%20Jewellery%20Sets&fm=organic&iid=952e51a3-94b9-4d3b-844b-cd9bcad92b8a.JWSG6E6NFSWVCZAB.SEARCH&ppt=browse&ppn=browse&ssid=crjhtdicef77t1j41700503301721"
+flipkart_scrapy(url, 'group1')
